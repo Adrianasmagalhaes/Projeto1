@@ -20,3 +20,21 @@ const responce = fetch('https://jsonplaceholder.typicode.com/users').then(respon
         console.log(`Deu erro na busca ${error}`)
     })
 // console.log(responce)
+const addPost=() =>{
+    fetch('https://jsonplaceholder.typicode.com/posts',{ 
+    method:'POST',
+    body: JSON.stringify({
+        userId: 3,
+        title : 'Titulo teste',
+        body: 'Eu fui inserido'
+    }),
+    headers:{
+        'Content-type': 'application/json; charset =UTF-8',
+    },
+    
+    })
+    .then(responce => responce.json())
+    .then(data => console.log(data))
+
+}
+addPost();
